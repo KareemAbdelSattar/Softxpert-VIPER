@@ -1,3 +1,10 @@
+//
+//  RecipesModel.swift
+//
+//
+//  Created by kareem chetoos on 29/10/2022.
+//
+//
 import Foundation
 struct RecipesModel : Codable {
 	let q : String?

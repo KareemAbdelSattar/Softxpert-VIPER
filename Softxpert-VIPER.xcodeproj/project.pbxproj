@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		32949885309553B221A45EB7 /* Pods_Softxpert_VIPER_Softxpert_VIPERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C32E1F5D2AB8456FE1BD05E /* Pods_Softxpert_VIPER_Softxpert_VIPERUITests.framework */; };
 		808354A118E46696E13B10AD /* Pods_Softxpert_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94D1076BBEEAC707D3CF899 /* Pods_Softxpert_VIPER.framework */; };
+		D431632A290FC40600D2300C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4316329290FC40600D2300C /* Recipe.swift */; };
 		D47E18DE290D3F9A00144308 /* RecipeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DA290D3F9A00144308 /* RecipeDetailsPresenter.swift */; };
 		D47E18DF290D3F9A00144308 /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DB290D3F9A00144308 /* RecipeDetailsRouter.swift */; };
 		D47E18E0290D3F9A00144308 /* RecipeDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DC290D3F9A00144308 /* RecipeDetailsInteractor.swift */; };
@@ -39,7 +40,6 @@
 		D4C74CE7290ACE0C00B2A062 /* Ingredients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74CE3290ACE0B00B2A062 /* Ingredients.swift */; };
 		D4C74CE8290ACE0C00B2A062 /* Hits.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74CE4290ACE0B00B2A062 /* Hits.swift */; };
 		D4C74CE9290ACE0C00B2A062 /* RecipesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74CE5290ACE0B00B2A062 /* RecipesModel.swift */; };
-		D4C74CEA290ACE0C00B2A062 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74CE6290ACE0B00B2A062 /* Recipe.swift */; };
 		D4C74CF7290AEBAD00B2A062 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74CF2290AEBAD00B2A062 /* RecipeCell.swift */; };
 		D4C74CF8290AEBAD00B2A062 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C74CF3290AEBAD00B2A062 /* RecipeCell.xib */; };
 		D4C74D0D290AED0100B2A062 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74D0C290AED0100B2A062 /* UIHelper.swift */; };
@@ -73,6 +73,7 @@
 		824E2847CA5348B0824E408D /* Pods-Softxpert-VIPER-Softxpert-VIPERUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Softxpert-VIPER-Softxpert-VIPERUITests.debug.xcconfig"; path = "Target Support Files/Pods-Softxpert-VIPER-Softxpert-VIPERUITests/Pods-Softxpert-VIPER-Softxpert-VIPERUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A69B7B81935308D103FB110C /* Pods_Softxpert_VIPERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Softxpert_VIPERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C824C4ABE8667F192BF9F484 /* Pods-Softxpert-VIPERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Softxpert-VIPERTests.debug.xcconfig"; path = "Target Support Files/Pods-Softxpert-VIPERTests/Pods-Softxpert-VIPERTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D4316329290FC40600D2300C /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		D47E18DA290D3F9A00144308 /* RecipeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenter.swift; sourceTree = "<group>"; };
 		D47E18DB290D3F9A00144308 /* RecipeDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRouter.swift; sourceTree = "<group>"; };
 		D47E18DC290D3F9A00144308 /* RecipeDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		D4C74CE3290ACE0B00B2A062 /* Ingredients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredients.swift; sourceTree = "<group>"; };
 		D4C74CE4290ACE0B00B2A062 /* Hits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hits.swift; sourceTree = "<group>"; };
 		D4C74CE5290ACE0B00B2A062 /* RecipesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesModel.swift; sourceTree = "<group>"; };
-		D4C74CE6290ACE0B00B2A062 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = ../../../Untitled/Softxpert/Model/Recipes/Recipe.swift; sourceTree = "<group>"; };
 		D4C74CF2290AEBAD00B2A062 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		D4C74CF3290AEBAD00B2A062 /* RecipeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		D4C74D0C290AED0100B2A062 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
@@ -166,6 +166,26 @@
 				A69B7B81935308D103FB110C /* Pods_Softxpert_VIPERTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D431632B290FC4C500D2300C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D47E18FA290D7A2600144308 /* History+CoreDataClass.swift */,
+				D47E18FB290D7A2600144308 /* History+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D431632C290FC4D700D2300C /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				D4C74CE4290ACE0B00B2A062 /* Hits.swift */,
+				D4C74CE3290ACE0B00B2A062 /* Ingredients.swift */,
+				D4C74CE5290ACE0B00B2A062 /* RecipesModel.swift */,
+				D4316329290FC40600D2300C /* Recipe.swift */,
+			);
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		D47E18D9290D3F7400144308 /* Recipe Details */ = {
@@ -322,12 +342,8 @@
 		D4C74CC5290AB91C00B2A062 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D47E18FA290D7A2600144308 /* History+CoreDataClass.swift */,
-				D47E18FB290D7A2600144308 /* History+CoreDataProperties.swift */,
-				D4C74CE4290ACE0B00B2A062 /* Hits.swift */,
-				D4C74CE3290ACE0B00B2A062 /* Ingredients.swift */,
-				D4C74CE6290ACE0B00B2A062 /* Recipe.swift */,
-				D4C74CE5290ACE0B00B2A062 /* RecipesModel.swift */,
+				D431632C290FC4D700D2300C /* Remote */,
+				D431632B290FC4C500D2300C /* CoreData */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -714,9 +730,9 @@
 				D4C74C91290AB7C400B2A062 /* SceneDelegate.swift in Sources */,
 				D47E18E1290D3F9A00144308 /* RecipeDetailsVC.swift in Sources */,
 				D4C74CE0290ACC1D00B2A062 /* RecipeListRemoteDataManager.swift in Sources */,
+				D431632A290FC40600D2300C /* Recipe.swift in Sources */,
 				D4C74CD5290ACA1500B2A062 /* Constant.swift in Sources */,
 				D4C74CE8290ACE0C00B2A062 /* Hits.swift in Sources */,
-				D4C74CEA290ACE0C00B2A062 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

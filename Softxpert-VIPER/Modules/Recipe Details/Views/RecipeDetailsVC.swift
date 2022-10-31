@@ -43,7 +43,7 @@ class RecipeDetailsVC: UIViewController {
     
     @objc
     private func shareButtonAction() {
-        guard let firstActivityItem = presenter?.recipe?.url else { return }
+        guard let firstActivityItem = presenter?.recipe?.shareAs else { return }
         let activityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         
         activityViewController.excludedActivityTypes = [
