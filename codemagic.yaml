@@ -1,0 +1,10 @@
+workflows:
+  Softxpert-workflow:
+    name: Softxpert Pipeline
+    scripts:
+        - name CICD Started
+            script: echo "Welcome to CI/ CD Set up "
+    publishing:
+      email:
+        recipients:
+          - kareem.as.aboelfateh@gmail.com
