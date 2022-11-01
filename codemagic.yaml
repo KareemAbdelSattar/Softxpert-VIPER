@@ -3,7 +3,7 @@ workflows:
     name: Softxpert Pipeline
     scripts:
         - name: CICD Started
-            script: echo "Welcome to CI/ CD Set up "
+          script: echo "Welcome to CI/ CD Set up "
     publishing:
       email:
         recipients:
