@@ -18,7 +18,7 @@ workflows:
                 --workspace "Softxpert-VIPER.xcworkspace" \
                 --scheme "Softxpert-VIPER" \
                 --device "iPhone 12"
-        test_report: build/ios/test/*.xml
+          test_report: build/ios/test/*.xml
     publishing:
       email:
         recipients:
