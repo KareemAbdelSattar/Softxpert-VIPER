@@ -4,6 +4,15 @@ workflows:
     scripts:
         - name: CICD Started
           script: echo "Welcome to CI/ CD Set up "
+        - name: build Softxpert
+          script: |
+        # build using workspace
+        xcodebuild build \
+          -workspace "Softxpert-VIPER.xcworkspace" \
+          -scheme "Softxpert-VIPER" \
+          CODE_SIGN_INDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          CODE_SIGNING_ALLOWED=NO
     publishing:
       email:
         recipients:
