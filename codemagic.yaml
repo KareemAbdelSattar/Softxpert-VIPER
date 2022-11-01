@@ -12,6 +12,13 @@ workflows:
                 CODE_SIGN_INDENTITY="" \
                 CODE_SIGNING_REQUIRED=NO \
                 CODE_SIGNING_ALLOWED=NO
+        - name: "Run iOS tests"
+          script: |
+            xcode-project run-tests \
+                --workspace "Softxpert-VIPER.xcworkspace" \
+                --scheme "Softxpert-VIPER" \
+                --device "iPhone 12"
+        test_report: build/ios/test/*.xml
     publishing:
       email:
         recipients:
