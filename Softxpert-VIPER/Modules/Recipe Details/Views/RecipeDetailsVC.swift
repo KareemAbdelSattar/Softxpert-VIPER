@@ -24,7 +24,7 @@ class RecipeDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUI()
+//        configureUI()
         configureTableView()
         setuptShareButton()
         presenter?.viewDidLoad()

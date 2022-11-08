@@ -10,6 +10,10 @@
 		32949885309553B221A45EB7 /* Pods_Softxpert_VIPER_Softxpert_VIPERUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C32E1F5D2AB8456FE1BD05E /* Pods_Softxpert_VIPER_Softxpert_VIPERUITests.framework */; };
 		808354A118E46696E13B10AD /* Pods_Softxpert_VIPER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94D1076BBEEAC707D3CF899 /* Pods_Softxpert_VIPER.framework */; };
 		D431632A290FC40600D2300C /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4316329290FC40600D2300C /* Recipe.swift */; };
+		D47DCDD42910084500C579B4 /* RecipeInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DCDD32910084500C579B4 /* RecipeInteractorTest.swift */; };
+		D47DCDD72910182F00C579B4 /* RecipeListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DCDD62910182F00C579B4 /* RecipeListPresenterMock.swift */; };
+		D47DCDD92910193900C579B4 /* RecipeListLocalDataMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DCDD82910193900C579B4 /* RecipeListLocalDataMock.swift */; };
+		D47DCDDB291020B200C579B4 /* LocalDataMangerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DCDDA291020B200C579B4 /* LocalDataMangerTest.swift */; };
 		D47E18DE290D3F9A00144308 /* RecipeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DA290D3F9A00144308 /* RecipeDetailsPresenter.swift */; };
 		D47E18DF290D3F9A00144308 /* RecipeDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DB290D3F9A00144308 /* RecipeDetailsRouter.swift */; };
 		D47E18E0290D3F9A00144308 /* RecipeDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47E18DC290D3F9A00144308 /* RecipeDetailsInteractor.swift */; };
@@ -45,6 +49,7 @@
 		D4C74D0D290AED0100B2A062 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74D0C290AED0100B2A062 /* UIHelper.swift */; };
 		D4C74D10290B063400B2A062 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C74D0E290B063400B2A062 /* FilterCell.swift */; };
 		D4C74D11290B063400B2A062 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4C74D0F290B063400B2A062 /* FilterCell.xib */; };
+		D4E371FA29112408004A541E /* RecipeListRemoteDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E371F929112408004A541E /* RecipeListRemoteDataManagerMock.swift */; };
 		E71B1B69BF10C07B3422C1D1 /* Pods_Softxpert_VIPERTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69B7B81935308D103FB110C /* Pods_Softxpert_VIPERTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +79,10 @@
 		A69B7B81935308D103FB110C /* Pods_Softxpert_VIPERTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Softxpert_VIPERTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C824C4ABE8667F192BF9F484 /* Pods-Softxpert-VIPERTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Softxpert-VIPERTests.debug.xcconfig"; path = "Target Support Files/Pods-Softxpert-VIPERTests/Pods-Softxpert-VIPERTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D4316329290FC40600D2300C /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		D47DCDD32910084500C579B4 /* RecipeInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInteractorTest.swift; sourceTree = "<group>"; };
+		D47DCDD62910182F00C579B4 /* RecipeListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListPresenterMock.swift; sourceTree = "<group>"; };
+		D47DCDD82910193900C579B4 /* RecipeListLocalDataMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListLocalDataMock.swift; sourceTree = "<group>"; };
+		D47DCDDA291020B200C579B4 /* LocalDataMangerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataMangerTest.swift; sourceTree = "<group>"; };
 		D47E18DA290D3F9A00144308 /* RecipeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsPresenter.swift; sourceTree = "<group>"; };
 		D47E18DB290D3F9A00144308 /* RecipeDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsRouter.swift; sourceTree = "<group>"; };
 		D47E18DC290D3F9A00144308 /* RecipeDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsInteractor.swift; sourceTree = "<group>"; };
@@ -113,6 +122,7 @@
 		D4C74D0C290AED0100B2A062 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		D4C74D0E290B063400B2A062 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		D4C74D0F290B063400B2A062 /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		D4E371F929112408004A541E /* RecipeListRemoteDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListRemoteDataManagerMock.swift; sourceTree = "<group>"; };
 		D94D1076BBEEAC707D3CF899 /* Pods_Softxpert_VIPER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Softxpert_VIPER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF3788469F6D51928CF4E73 /* Pods-Softxpert-VIPERTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Softxpert-VIPERTests.release.xcconfig"; path = "Target Support Files/Pods-Softxpert-VIPERTests/Pods-Softxpert-VIPERTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +196,17 @@
 				D4316329290FC40600D2300C /* Recipe.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		D47DCDD52910176B00C579B4 /* RecipeList-interactorTest */ = {
+			isa = PBXGroup;
+			children = (
+				D47DCDD32910084500C579B4 /* RecipeInteractorTest.swift */,
+				D47DCDD62910182F00C579B4 /* RecipeListPresenterMock.swift */,
+				D47DCDD82910193900C579B4 /* RecipeListLocalDataMock.swift */,
+				D4E371F929112408004A541E /* RecipeListRemoteDataManagerMock.swift */,
+			);
+			path = "RecipeList-interactorTest";
 			sourceTree = "<group>";
 		};
 		D47E18D9290D3F7400144308 /* Recipe Details */ = {
@@ -290,6 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				D4C74CA8290AB7C600B2A062 /* Softxpert_VIPERTests.swift */,
+				D47DCDD52910176B00C579B4 /* RecipeList-interactorTest */,
+				D47DCDDA291020B200C579B4 /* LocalDataMangerTest.swift */,
 			);
 			path = "Softxpert-VIPERTests";
 			sourceTree = "<group>";
@@ -740,7 +763,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D47DCDD42910084500C579B4 /* RecipeInteractorTest.swift in Sources */,
+				D47DCDDB291020B200C579B4 /* LocalDataMangerTest.swift in Sources */,
 				D4C74CA9290AB7C600B2A062 /* Softxpert_VIPERTests.swift in Sources */,
+				D47DCDD72910182F00C579B4 /* RecipeListPresenterMock.swift in Sources */,
+				D47DCDD92910193900C579B4 /* RecipeListLocalDataMock.swift in Sources */,
+				D4E371FA29112408004A541E /* RecipeListRemoteDataManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,7 +6,19 @@
 //
 
 import XCTest
-@testable Softe
-class RemoteDataManagerMock: XCTestCase {
+@testable import Softxpert_VIPER
 
+class RecipeListRemoteDataManagerMock: RecipeListRemoteDataMangagerProtcol {
+    var interactor: RecipeListInteractorProtocol?
+    
+    var error: FetchError?
+    var recipeModel: RecipesModel!
+    
+    func retriveRecipeList(searchText: String, filter: String, from: Int, to: Int) {
+        if error == nil {
+            interactor?.onRecipesRetrieved(recipeModel: recipeModel)
+        } else {
+            interactor?.onError(error: error!)
+        }
+    }
 }

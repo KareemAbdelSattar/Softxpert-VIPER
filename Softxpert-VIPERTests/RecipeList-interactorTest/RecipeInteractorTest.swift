@@ -8,90 +8,96 @@
 import XCTest
 @testable import Softxpert_VIPER
 
-class RecipeListPresenterTestTest: XCTestCase {
-
-    var presenter: RecipeListPresenter?
-    var view = RecipeListVCMock()
-    var interactor = RecipeListInteractorMock()
+class RecipeListInteractorTest: XCTestCase {
+        
+    var interactor: RecipeListInteractor?
+    var presenter: RecipeListPresenterMock?
+    var localDataManager: RecipeListLocalDataMock?
+    var remoteDataManger: RecipeListRemoteDataManagerMock?
     
     override func setUp() {
         super.setUp()
-        presenter = RecipeListPresenter()
-        presenter?.view = view
+        interactor = RecipeListInteractor()
+        presenter = RecipeListPresenterMock()
+        localDataManager = RecipeListLocalDataMock()
+        remoteDataManger = RecipeListRemoteDataManagerMock()
+        interactor?.presenter = presenter
+        interactor?.localDataManager = localDataManager
+        interactor?.remoteDataManager = remoteDataManger
         presenter?.interactor = interactor
-        interactor.presenter = presenter
+        remoteDataManger?.interactor = interactor
     }
     
     override func tearDown() {
-        presenter = nil
         super.tearDown()
     }
     
-    func testViewDidLoadEqual() {
-        view.showError(with: "error")
-        XCTAssertEqual(view.msg, "error")
+    func testRetriveHistoryFromLocalDataIfFoundData() {
+        interactor?.saveHistory(searchText: "kareem")
+        interactor?.retriveHistory()
+        XCTAssertEqual(presenter?.historyCount, 3)
+    }
+    
+    func testIsValidLaterWhenItTrue() {
+       let result = interactor?.isValidateEnglishLetters(text: "Kareem")
+        XCTAssertTrue(result!, "Should return True")
+    }
+    
+    func testRetriveHistoryFromLocalDataIfFoundError() {
+        presenter?.error = .emptyData
+        localDataManager?.error = .emptyData
+        interactor?.retriveHistory()
+    }
+    
+    func testSaveDataFromLocalDataIfFoundError() {
+        presenter?.error = .failed
+        localDataManager?.error = .failed
+        interactor?.saveHistory(searchText: "Text")
+    }
+    
+    func testIsValidLaterWithArabicLater() {
+       let result = interactor?.isValidateEnglishLetters(text: "كريم")
+        XCTAssertFalse(result!, "Should return False")
+    }
+    
+    func testIsValidWhiteSpacesNotValid() {
+        let result = interactor?.isValidWhiteSpaces(searchText: "   ")
+        XCTAssertFalse(result!, "Should return False")
+    }
+    
+    func testIsValidWhiteSpacesValid() {
+        let result = interactor?.isValidWhiteSpaces(searchText: "Kareem Abdo")
+        XCTAssertTrue(result!, "Should return True")
+    }
+    
+    func testOnReciveError() {
+        remoteDataManger?.error = .failed
+        presenter?.error = .failed
+        
+        interactor?.retriveRecipeList(searchText: "Kareem", from: 1, to: 1, filter: "")
     }
     
     
-    func testViewDidLoadNotEqual() {
-        view.showError(with: "error")
-        XCTAssertNotEqual(view.msg, "erro")
+    func testOnReciveDataWithEmptyHits() {
+        remoteDataManger?.error = nil
+        remoteDataManger?.recipeModel = RecipesModel(q: "", from: 1, to: 1, more: false, count: 4, hits: nil)
+        presenter?.error = .emptyData
+        interactor?.retriveRecipeList(searchText: "Kareem", from: 1, to: 1, filter: "")
     }
-}
+    
+    
+    func testOnReciveDataWithEmptyData() {
+        remoteDataManger?.error = nil
+        remoteDataManger?.recipeModel = RecipesModel(q: "", from: 1, to: 1, more: false, count: 0, hits: [Hits(recipe: nil)])
+        presenter?.error = .noRecipes
+        interactor?.retriveRecipeList(searchText: "Kareem", from: 1, to: 1, filter: "")
+    }
 
-class RecipeListVCMock: RecipeListViewProtocol {
-    var presenter: RecipeListPresenterProtocol?
-    
-    var msg = ""
-    
-    func showIndicator() {
-        
-    }
-    
-    func hideIndicator() {
-        
-    }
-    
-    func reloadCollection() {
-            
-    }
-    
-    func reloadTableView() {
-        
-    }
-    
-    func showError(with msg: String) {
-        self.msg = msg
-    }
-    
-    func hideError() {
-        
-    }
-}
-
-class RecipeListInteractorMock: RecipeListInteractorProtocol {
-    var presenter: RecipeListPresenterProtocol?
-    
-    var remoteDataManager: RecipeListRemoteDataMangagerProtcol?
-    
-    func retriveRecipeList(searchText: String?, from: Int, to: Int, filter: String?) {
-        
-    }
-    
-    func onRecipesRetrieved(recipeModel: RecipesModel) {
-        
-    }
-    
-    func onError(error: FetchError) {
-        
-    }
-    
-    func retriveHistory() {
-        
-    }
-    
-    func saveHistory(searchText: String) {
-        
+    func testOnReciveDataWithTextInvaid() {
+        remoteDataManger?.error = nil
+        remoteDataManger?.recipeModel = RecipesModel(q: "", from: 1, to: 1, more: false, count: 0, hits: [Hits(recipe: nil)])
+        presenter?.error = .textSearchInvalid
+        interactor?.retriveRecipeList(searchText: "", from: 1, to: 1, filter: "")
     }
 }
 

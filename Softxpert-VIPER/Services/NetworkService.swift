@@ -10,6 +10,7 @@ enum FetchError: Error {
     case failed
     case emptyData
     case noRecipes
+    case textSearchInvalid
 }
 
 class NetworkService {
@@ -17,6 +18,7 @@ class NetworkService {
     
     func fetch<T : Decodable>(userRouter: URLRequestConvertible,completionHandler: @escaping (Result<T?, FetchError>)->()){
         AF.request(userRouter).responseData { response in
+            debugPrint(response)
             switch response.result {
             case .success(let data):
                 do{

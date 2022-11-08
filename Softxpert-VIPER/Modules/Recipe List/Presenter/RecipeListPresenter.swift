@@ -18,21 +18,20 @@ protocol RecipeListPresenterProtocol: AnyObject {
     var historyCount: Int { get }
     var filterIndex: IndexPath { get set }
     func viewDidLoad()
-    func getRecipes()
+    func getRecipes(searchText: String)
     func didRetrieveRecipes(hits: [Hits])
     func didRetrieveError(error: FetchError)
     func filter(with indexPath: IndexPath) -> String
     func recipe(with indexPath: IndexPath) -> Recipe?
-    func fetchNextPage()
-    func searchTextIsValidate(searchText: String) -> Bool
+    func fetchNextPage(searchText: String)
     func didSelectRecipe(indexPath: IndexPath)
     func didRetriveHistory(history: [History])
     func history(with indexPath: IndexPath) -> History
-    func saveHistoryData(searchText: String)
     func getHistoryData()
 }
 
 class RecipeListPresenter: RecipeListPresenterProtocol {
+   
     weak var view: RecipeListViewProtocol?
     var interactor: RecipeListInteractorProtocol?
     var router: RecipeListRouterProtocol?
@@ -51,7 +50,6 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
     private let filterKeys = ["", "low-sugar", "vegan", "keto-friendly"]
     private var from = 0
     private var to = 10
-    private var searchText = ""
     private var hits = [Hits]()
     private var history = [History]()
 
@@ -64,7 +62,7 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
         router?.pushToRecipeDetails(recipe: recipe)
     }
     
-    func getRecipes() {
+    func getRecipes(searchText: String) {
         from = 0
         to = 10
         hits.removeAll()
@@ -73,7 +71,7 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
         interactor?.retriveRecipeList(searchText: searchText, from: from, to: to, filter: filterKeys[filterIndex.row])
     }
     
-    func fetchNextPage() {
+    func fetchNextPage(searchText: String) {
         from = to
         to = to + 10
         view?.hideError()
@@ -89,17 +87,23 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
     
     func didRetrieveError(error: FetchError) {
         view?.hideIndicator()
-        hits.removeAll()
-        self.view?.reloadCollection()
         switch error {
         case .failed:
             view?.showError(with: "Failed, Please try again")
+            hits.removeAll()
+            self.view?.reloadCollection()
         case .emptyData:
             if hits.isEmpty {
                 view?.showError(with: "No Record, Please try again")
+                hits.removeAll()
+                self.view?.reloadCollection()
             }
         case .noRecipes:
             view?.showError(with: "Empty recipes, Please enter search for recipe")
+            hits.removeAll()
+            self.view?.reloadCollection()
+        case .textSearchInvalid:
+            print("Text Search Invalid")
         }
     }
     
@@ -126,29 +130,6 @@ class RecipeListPresenter: RecipeListPresenterProtocol {
     
     func getHistoryData() {
         interactor?.retriveHistory()
-    }
-    
-    func saveHistoryData(searchText: String) {
-        interactor?.saveHistory(searchText: searchText)
-    }
-    
-    private func isValidateEnglishLetters(text: String) -> Bool {
-        let Regex = "[a-z A-Z ]+"
-        let predicate = NSPredicate.init(format: "SELF MATCHES %@", Regex)
-        if predicate.evaluate(with: text) || text == "" {
-            return true
-        } else {
-            return false
-        }
-    }
-    
-    func searchTextIsValidate(searchText: String) -> Bool {
-        if !searchText.trimmingCharacters(in: .whitespaces).isEmpty, isValidateEnglishLetters(text: searchText){
-            self.searchText = searchText
-            return true
-        } else {
-            return false
-        }
     }
 }
 

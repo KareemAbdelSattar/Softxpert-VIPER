@@ -130,14 +130,14 @@ extension RecipeListVC: UICollectionViewDelegate, UICollectionViewDataSource {
             let cell = collectionView.cellForItem(at: indexPath) as? FilterCell
             cell?.backgroundColor = .systemGray4
             presenter!.filterIndex = indexPath
-            presenter?.getRecipes()
+            presenter?.getRecipes(searchText: searchController.searchBar.text ?? "")
         case 1:
             presenter?.didSelectRecipe(indexPath: indexPath)
         default:
             break
         }
     }
- 
+    
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
@@ -150,7 +150,7 @@ extension RecipeListVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == presenter!.recipeCount - 1{
-            presenter?.fetchNextPage()
+            presenter?.fetchNextPage(searchText: searchController.searchBar.text ?? "")
         }
     }
 }
@@ -168,11 +168,7 @@ extension RecipeListVC: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
-        if let searchText = searchBar.text, presenter!.searchTextIsValidate(searchText: searchText) {
-            presenter?.saveHistoryData(searchText: searchText)
-            presenter?.getRecipes()
-        }
-        
+        presenter?.getRecipes(searchText: searchBar.text ?? "")
     }
 }
 
