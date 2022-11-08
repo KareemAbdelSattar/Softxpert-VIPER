@@ -1,5 +1,21 @@
+version: 2
+jobs:
+  build-and-test:
+    macos:
+      xcode: "13.3.1"
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - checkout
+      - run: bundle install
+
 workflows:
   version: 2
   build-test-adhoc:
     jobs:
       - build-and-test
+      #- beta:
+          #filters:
+            #branches:
+              #only: master
+          #requires:
+            #- build-and-test
